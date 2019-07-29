@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="./css/data_validation.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
+        <title>Data Validation</title>
+        <style>
+            html {
+                height:100%;
+            }
+            body {
+                margin:0;
+                padding:0;
+                height:100%;
+                font-family: 't036018t';
+                transition: background-color 0.5s;
+            }
+            .rect-icon {
+                float:right;
+            }
+            .rect-icon:hover {
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="modal-back">
+        </div>
+        <div class="login">
+            <div class="signIn-form">
+                <input type="text" name="username" placeholder="username"/>
+                <input type="password" name="password" placeholder="password"/>
+                <button>submit</button>
+            </div>
+        </div>
+        <div class="card-modal">
+            <div class="card-modal-data">
+                <p></p>
+                <p></p>
+            </div>
+        </div>
+        <nav class="nav-container" >
+            <div class="nav-top">
+                <div class="nav-top-left">
+                    <div class="container-hidden">
+                        <div class="ham"></div>
+                        <div class="ham"></div>
+                        <div class="ham"></div>
+                    </div>
+                        <li>DATA VALIDATION</li>
+                </div>
+                <div class="nav-top-centre curved-area" onclick="navTopSelected()">
+                    <li class="nav-top-selected nav-top-selected-left nav-top-item left-item" ><img src="./assets/svg/list.svg" alt="list_icon" /> <span>BROWSE CHECKS </span></li>
+                    <li class="nav-top-item"><img src="./assets/svg/list.svg" alt="list_icon"/><span>PINNED</span></li>
+                    <li class="nav-top-item"><img src="./assets/svg/list.svg" alt="list_icon"/><span>MY CHECKS</span></li>
+                    <li class="nav-top-item"><img src="./assets/svg/list.svg" alt="list_icon"/><span>CREATE CHECK</span></li>
+                    <li class="nav-top-item right-item"><img src="./assets/svg/list.svg" alt="list_icon"/><span>CREATE TYPES</span></li>
+                </div>
+                <div class="nav-top-right" onclick="loginForm()">
+                    <li ><img src="./assets/png/user.png" width="35px" height="35px"/></li>
+                </div>
+            </div>
+            <nav class="nav-centre curved-area" onclick="navCentreSelected()">
+                <div class="nav-centre-dropdown-container">
+                <li>RECOMMENDED</li>
+                <div>
+                    <div></div>
+                    <div></div>
+                </div>
+                </div>
+                <div class="nav-centre-dropdown-container">
+                <li>FINANCE</li>
+                <div >
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="nav-centre-dropdown-container">
+                <li>MARKETING</li>
+                <div >
+                        <div></div>
+                        <div></div>
+                </div>
+                </div>
+                <div class="nav-centre-dropdown-container">
+                <li>SALES</li>
+                <div >
+                        <div></div>
+                        <div></div>
+                </div>
+                </div>
+                <div class="nav-centre-dropdown-container">
+                <li>CLOUD</li>
+                <div >
+                        <div></div>
+                        <div></div>
+                </div>
+                </div>
+                <div class="nav-centre-dropdown-container">
+                <li>. . .</li>
+                <div >
+                        <div></div>
+                        <div></div>
+                </div>
+                </div>
+            </nav>
+            <nav class="nav-bottom">
+                <div class="nav-bottom-centre">
+                    <input type="text" name="search" placeholder="SEARCH....."/>
+                    <img   src="./assets/png/search.png" alt="list_icon"/>
+                </div>
+                <div class="filter">
+                        <img class="filter-image" src="./assets/svg/list.svg" alt="list_icon"/>
+                        <p style="margin:5px 0 ;font-size:10px; ">FILTER</p>
+                        <div class="filter-dropdown">
+                            <div class="up-arrow"></div>
+                            <div class="filter-drop"></div>
+                        </div>
+                </div>
+            </nav>
+        </nav>
+        <section class="section-container">
+            <div class="section-container-aside">
+                <img class="list-active" src="./assets/svg/view.svg"  alt="view_icon"/>
+                <img src="./assets/svg/list.svg" alt="list_icon"/>
+            </div>
+            <div class="section-container-card">
+            <div class="card-wrapper">
+            <div class="card-row">
+                <div class="slide-right">
+                    left
+                </div>
+                <div class="slide-left">
+                    right
+                </div>
+                <div class="data-card-row" onclick="cardInfo()">
+                <div class="data-card first-card">
+                    <img class="rect-icon" src = "./assets/png/pin.png" alt="kuch_vi"/>
+                    <p class="check_type_name">CHECK_TYPE_NAME</p>
+                    <p class="unique_check_name_1">UNIQUE_CHECK_NAME_1</p>
+                    <p><span class="source_table">Source Table</span><span>------------</span><span class="source_table">Target Table</span></p>
+                    <p class="schema_name">Schema Name</p>
+                    <p class="file_name">Database/file Name</p>
+                    <p class="file_name">Connection Name</p>
+                </div>
+                <div class="data-card">
+                        <img class="rect-icon" src = "./assets/png/pin.png" alt="kuch_vi"/>
+                        <p class="check_type_name">CHECK_TYPE_NAME</p>
+                        <p class="unique_check_name_1">UNIQUE_CHECK_NAME_1</p>
+                        <p><span class="source_table">Source Table</span><span>------------</span><span class="source_table">Target Table</span></p>
+                        <p class="schema_name">Schema Name</p>
+                        <p class="file_name">Database/file Name</p>
+                        <p class="file_name">Connection Name</p>
+                    </div>
+                    <div class="data-card">
+                        <img class="rect-icon" src = "./assets/png/pin.png" alt="kuch_vi"/>
+                        <p class="check_type_name">CHECK_TYPE_NAME</p>
+                        <p class="unique_check_name_1">UNIQUE_CHECK_NAME_1</p>
+                        <p><span class="source_table">Source Table</span><span>------------</span><span class="source_table">Target Table</span></p>
+                        <p class="schema_name">Schema Name</p>
+                        <p class="file_name">Database/file Name</p>
+                        <p class="file_name">Connection Name</p>
+                    </div>
+                <div class="data-card">
+                    <img class="rect-icon" src = "./assets/png/pin.png" alt="kuch_vi"/>
+                    <p class="check_type_name">CHECK_TYPE_NAME</p>
+                    <p class="unique_check_name_1">UNIQUE_CHECK_NAME_1</p>
+                    <p><span class="source_table">Source Table</span><span>------------</span><span class="source_table">Target Table</span></p>
+                    <p class="schema_name">Schema Name</p>
+                    <p class="file_name">Database/file Name</p>
+                    <p class="file_name">Connection Name</p>
+                </div>
+                <div class="data-card">
+                    <img class="rect-icon" src = "./assets/png/pin.png" alt="kuch_vi"/>
+                    <p class="check_type_name">CHECK_TYPE_NAME</p>
+                    <p class="unique_check_name_1">UNIQUE_CHECK_NAME_1</p>
+                    <p><span class="source_table">Source Table</span><span>------------</span><span class="source_table">Target Table</span></p>
+                    <p class="schema_name">Schema Name</p>
+                    <p class="file_name">Database/file Name</p>
+                    <p class="file_name">Connection Name</p>
+                </div>
+                <div class="data-card">
+                    <img class="rect-icon" src = "./assets/png/pin.png" alt="kuch_vi"/>
+                    <p class="check_type_name">CHECK_TYPE_NAME</p>
+                    <p class="unique_check_name_1">UNIQUE_CHECK_NAME_1</p>
+                    <p><span class="source_table">Source Table</span><span>------------</span><span class="source_table">Target Table</span></p>
+                    <p class="schema_name">Schema Name</p>
+                    <p class="file_name">Database/file Name</p>
+                    <p class="file_name">Connection Name</p>
+                </div>
+                <div class="data-card last-card">
+                    <img class="rect-icon" src = "./assets/png/pin.png" alt="kuch_vi"/>
+                    <p class="check_type_name">CHECK_TYPE_NAME</p>
+                    <p class="unique_check_name_1">UNIQUE_CHECK_NAME_1</p>
+                    <p><span class="source_table">Source Table</span><span>------------</span><span class="source_table">Target Table</span></p>
+                    <p class="schema_name">Schema Name</p>
+                    <p class="file_name">Database/file Name</p>
+                    <p class="file_name">Connection Name</p>
+                </div>
+                </div>
+            </div>
+            <div class="card-below-carosel" onclick="cardInfo()">
+                <div class="card-below">
+                <div class="data-card">
+                    <img class="rect-icon" src = "./assets/png/pin.png" alt="kuch_vi"/>
+                    <p class="check_type_name">CHECK_TYPE_NAME</p>
+                    <p class="unique_check_name_1">UNIQUE_CHECK_NAME_1</p>
+                    <p><span class="source_table">Source Table</span><span>------------</span><span class="source_table">Target Table</span></p>
+                    <p class="schema_name">Schema Name</p>
+                    <p class="file_name">Database/file Name</p>
+                    <p class="file_name">Connection Name</p>
+                </div>
+                <div class="data-card">
+                    <img class="rect-icon" src = "./assets/png/pin.png" alt="kuch_vi"/>
+                    <p class="check_type_name">CHECK_TYPE_NAME</p>
+                    <p class="unique_check_name_1">UNIQUE_CHECK_NAME_1</p>
+                    <p><span class="source_table">Source Table</span><span>------------</span><span class="source_table">Target Table</span></p>
+                    <p class="schema_name">Schema Name</p>
+                    <p class="file_name">Database/file Name</p>
+                    <p class="file_name">Connection Name</p>
+                </div>
+                <div class="data-card">
+                    <img class="rect-icon" src = "./assets/png/pin.png" alt="kuch_vi"/>
+                    <p class="check_type_name">CHECK_TYPE_NAME</p>
+                    <p class="unique_check_name_1">UNIQUE_CHECK_NAME_1</p>
+                    <p><span class="source_table">Source Table</span><span>------------</span><span class="source_table">Target Table</span></p>
+                    <p class="schema_name">Schema Name</p>
+                    <p class="file_name">Database/file Name</p>
+                    <p class="file_name">Connection Name</p>
+                </div>
+                <div class="data-card">
+                    <img class="rect-icon" src = "./assets/png/pin.png" alt="kuch_vi"/>
+                    <p class="check_type_name">CHECK_TYPE_NAME</p>
+                    <p class="unique_check_name_1">UNIQUE_CHECK_NAME_1</p>
+                    <p><span class="source_table">Source Table</span><span>------------</span><span class="source_table">Target Table</span></p>
+                    <p class="schema_name">Schema Name</p>
+                    <p class="file_name">Database/file Name</p>
+                    <p class="file_name">Connection Name</p>
+                </div>
+                <div class="data-card">
+                    <img class="rect-icon" src = "./assets/png/pin.png" alt="kuch_vi"/>
+                    <p class="check_type_name">CHECK_TYPE_NAME</p>
+                    <p class="unique_check_name_1">UNIQUE_CHECK_NAME_1</p>
+                    <p><span class="source_table">Source Table</span><span>------------</span><span class="source_table">Target Table</span></p>
+                    <p class="schema_name">Schema Name</p>
+                    <p class="file_name">Database/file Name</p>
+                    <p class="file_name">Connection Name</p>
+                </div>
+                <div class="data-card">
+                    <img class="rect-icon" src = "./assets/png/pin.png" alt="kuch_vi"/>
+                    <p class="check_type_name">CHECK_TYPE_NAME</p>
+                    <p class="unique_check_name_1">UNIQUE_CHECK_NAME_1</p>
+                    <p><span class="source_table">Source Table</span><span>------------</span><span class="source_table">Target Table</span></p>
+                    <p class="schema_name">Schema Name</p>
+                    <p class="file_name">Database/file Name</p>
+                    <p class="file_name">Connection Name</p>
+                </div>
+                <div class="data-card">
+                    <img class="rect-icon" src = "./assets/png/pin.png" alt="kuch_vi"/>
+                    <p class="check_type_name">CHECK_TYPE_NAME</p>
+                    <p class="unique_check_name_1">UNIQUE_CHECK_NAME_1</p>
+                    <p><span class="source_table">Source Table</span><span>------------</span><span class="source_table">Target Table</span></p>
+                    <p class="schema_name">Schema Name</p>
+                    <p class="file_name">Database/file Name</p>
+                    <p class="file_name">Connection Name</p>
+                </div>
+                <div class="data-card">
+                    <img class="rect-icon" src = "./assets/png/pin.png" alt="kuch_vi"/>
+                    <p class="check_type_name">CHECK_TYPE_NAME</p>
+                    <p class="unique_check_name_1">UNIQUE_CHECK_NAME_1</p>
+                    <p><span class="source_table">Source Table</span><span>------------</span><span class="source_table">Target Table</span></p>
+                    <p class="schema_name">Schema Name</p>
+                    <p class="file_name">Database/file Name</p>
+                    <p class="file_name">Connection Name</p>
+                </div>
+            </div>
+            </div>
+            <div class="buttons-wrapper">
+                    <button id="view_more">VIEW MORE</button>
+                    <button id="show_less">SHOW LESS</button>
+                </div>
+            </div>
+            </div>
+            </div>
+        </section>
+        <footer class="footer-container">
+            <div class="footer-left">
+            <li class="footer-active footer-element">EDS</li>
+            </div>
+            <div class="footer-company" >
+                    <li class="footer-element"><img  src="./assets/svg/list.svg" alt="list_icon"/>QUALIS</li>
+                </div>
+            <div class="footer-info">
+                <li class="footer-element">Privacy</li>
+                <li class="footer-element">Terms</li>
+                <li class="footer-element">Legal</li>
+            </div>
+        </footer>
+        <script src = "./js/main.js"></script>
+    </body>
+</html>
